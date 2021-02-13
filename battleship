@@ -1,0 +1,64 @@
+import random
+
+computerShips = []
+playerShips = []
+computerWater = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+playerWater = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+while len(computerShips) < 3:
+    pick = random.randint(0, 9)
+    if pick not in computerShips:
+        computerShips.append(pick)
+
+playerships = [ ]
+
+while len(playerships) < 3:
+  pick = int(input("pick 0-9 " ))
+  if pick not in playerships:
+      playerships.append(pick)
+
+print (playerships)
+
+while len(computerShips) > 0 and len(playerShips) > 0:
+    print("Remaining player ships:", len(playerShips))
+    print("Remaining computer ships:", len(computerShips))
+    print("Computer water: ", computerWater)
+    print("Player water: ", playerWater)
+    
+    while True:
+        playerFire = int(input("Pick a target to shoot: "))
+        if playerFire in computerWater:
+            computerWater[playerFire] = "X"
+            break
+        else:
+            print("Invalid target. Try again")
+    while true:
+        computerfire = random.randint(0,9)
+        if computerFire in playerwater:
+            playerwater[computerfire] = "x"
+            break
+    print("You shoot at", playerFire)
+    print("The computer shoots at", computerFire)
+
+    if player ("hit"): 
+      print ("great job")
+    else:
+         print("you missed!" )
+
+    
+    if computerFire in playerShips:
+        print("You've been hit!")
+        playerShips.remove(computerFire)
+    else:
+        print("The computer missed!")
+
+    print("\n\n\n")
+      
+
+if len(computerShips) == len(playerShips):
+    print("It's a tie!")
+elif len(playerShips) > len(computerShips):
+    print("You win!")
+else:
+    print("You lose!")
+
